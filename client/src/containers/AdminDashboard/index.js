@@ -22,10 +22,12 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
+import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
+import { useHistory } from 'react-router-dom';
 import Deposits from './Deposits';
 import Title from './Title';
 
@@ -145,6 +147,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Dashboard() {
   const classes = useStyles();
+  const history = useHistory();
   const [open, setOpen] = useState(false);
   const [users, setUsers] = useState([]);
 
@@ -153,7 +156,6 @@ export default function Dashboard() {
       const result = await axios.post(
         'http://localhost:5000/api/users/admin',
       );
-      console.log(result)
       setUsers(result.data.users);
     };
  
@@ -190,6 +192,9 @@ export default function Dashboard() {
               <NotificationsIcon />
             </Badge>
           </IconButton>
+          <Button style={{marginLeft:'20px'}} color="inherit" variant="outlined" onClick={() => history.push('/dashboard')} >
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
       <Drawer

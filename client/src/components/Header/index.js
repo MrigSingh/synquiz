@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
- function MenuAppBar({logoutUser, handleClick}) {
+ function MenuAppBar({logoutUser}) {
   const classes = useStyles();
   const [auth, setAuth] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -96,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={() => history.push('/')}>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={() => history.push('/dashboard')}>
             <HomeIcon  />
           </IconButton>
           <Typography variant="h6" className={classes.title}>

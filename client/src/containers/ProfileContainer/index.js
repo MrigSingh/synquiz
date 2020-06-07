@@ -5,7 +5,7 @@ import Tabs from './Tabs';
 function ProfileContainer() {
   const user = JSON.parse(localStorage.getItem('user'))
   return (
-    <div style={{background:'#eee', minHeight: '100vh'}}>
+    <div style={{background:'#eee', minHeight: '120vh'}}>
       <Header />
       <div style={{width: '60%', margin: '50px auto'}}>
         <h2 style={{margin:'40px'}} >View and Edit your Profile {user.firstName} </h2>

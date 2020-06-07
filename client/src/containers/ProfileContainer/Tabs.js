@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.secondary,
-    padding: '10px'
+    padding: '10px 50px'
   },
   icon: {
     verticalAlign: 'bottom',

@@ -15,7 +15,7 @@ function Result(props) {
     >
       <div>
         <h1>Great Job! </h1>
-        <h3>Your results are being evaluated. We will notify you once its done. By the time you can take others Quizzes. Happy Learning !</h3>
+        <h3>Your results are being evaluated. We will send your results over registered email once its done. By the time you can take others Quizzes. Happy Learning !</h3>
       </div>
     </TransitionGroup>
   );
