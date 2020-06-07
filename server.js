@@ -29,13 +29,11 @@ mongoose
 app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
+
+app.use(express.static('client/build'));
 // Routes
 app.use("/api/users", users);
-app.use(express.static(path.join(__dirname, "client", "build")))
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
 
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port if you choose to deploy the app there
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));

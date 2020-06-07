@@ -111,7 +111,10 @@ router.post("/profile", (req, res) => {
   User.findOne({ email }).then(user => {
     return res.status(200).json({user})
   });
+});
 
-})
+router.use(function(req, res) {
+	res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 module.exports = router;
